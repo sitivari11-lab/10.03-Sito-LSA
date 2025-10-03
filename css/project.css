@@ -76,10 +76,28 @@ body {
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-.project-item img:hover {
-      filter: grayscale(0%);
-      transform: scale(1.05);
-    }
+/* Effetto grayscale SOLO su desktop */
+@media (min-width: 769px) {
+  .project-item img {
+    filter: grayscale(100%);
+  }
+  
+  .project-item img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+}
+
+/* Su mobile: sempre a colori, solo effetto scale al tocco */
+@media (max-width: 768px) {
+  .project-item img {
+    filter: grayscale(0%);
+  }
+  
+  .project-item img:active {
+    transform: scale(1.05);
+  }
+}
 
 .project-item img.no-lightbox {
   cursor: default;
