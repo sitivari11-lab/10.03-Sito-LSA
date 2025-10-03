@@ -78,14 +78,31 @@
       aspect-ratio: 3 / 4;
       object-fit: cover;
       display: block;
-      filter: grayscale(100%);
       transform: scale(1);
       transition: transform 0.4s ease, filter 0.4s ease;
     }
 
-    .project-item img:hover {
-      filter: grayscale(0%);
-      transform: scale(1.05);
+    /* Effetto grayscale SOLO su desktop */
+    @media (min-width: 769px) {
+      .project-item img {
+        filter: grayscale(100%);
+      }
+      
+      .project-item img:hover {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+      }
+    }
+
+    /* Su mobile: sempre a colori, solo effetto scale al tocco */
+    @media (max-width: 768px) {
+      .project-item img {
+        filter: grayscale(0%);
+      }
+      
+      .project-item img:active {
+        transform: scale(1.05);
+      }
     }
 
     /* DIDASCALIE */
@@ -151,6 +168,7 @@
     .close-btn {
       margin-top: 30px;
       background: none;
+      color: #4a5b6b;
       border: 1px solid #4a5b6b;
       padding: 8px 16px;
       cursor: pointer;
@@ -191,8 +209,6 @@
     <!-- CONTENUTO SCROLLABILE -->
     <main class="main-content">
       <section class="projects-grid">
-
-
         <!-- PROJECT 18 -->
         <div class="project-item">
           <a href="project18.html">
@@ -203,7 +219,6 @@
             <p>Milano - 2025</p>
           </div>
         </div>
-
 
         <!-- PROJECT 17 -->
         <div class="project-item">
@@ -216,7 +231,6 @@
           </div>
         </div>
 
-
         <!-- PROJECT 16 -->
         <div class="project-item">
           <a href="project16.html">
@@ -227,7 +241,6 @@
             <p>Madonna di Campiglio - 2024</p>
           </div>
         </div>
-
 
         <!-- PROJECT 15 -->
         <div class="project-item">
@@ -240,7 +253,7 @@
           </div>
         </div>
 
-        <!-- PROJECT 14 ELIMINARE-->
+        <!-- PROJECT 14 -->
         <div class="project-item">
           <a href="project14.html">
             <img src="foto/14.00.webp" alt="Progetto 14">
@@ -410,7 +423,7 @@
     </div>
   </div>
 
-<!-- OVERLAY MENU -->
+  <!-- OVERLAY MENU -->
   <div id="menu-overlay" class="overlay hidden">
     <div class="overlay-content">
       <a href="progetti.html">progetti</a>
@@ -422,24 +435,20 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // ========== MENU OVERLAY ==========
       const menuIcon = document.querySelector('.menu-icon');
       const menuOverlay = document.getElementById('menu-overlay');
       const closeBtn = document.querySelector('.close-btn');
 
-      // Apri menu
       menuIcon.addEventListener('click', () => {
         menuOverlay.classList.remove('hidden');
       });
 
-      // Chiudi menu
       const closeMenu = () => {
         menuOverlay.classList.add('hidden');
       };
 
       closeBtn.addEventListener('click', closeMenu);
 
-      // Chiudi menu con ESC
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && !menuOverlay.classList.contains('hidden')) {
           e.preventDefault();
@@ -447,14 +456,12 @@
         }
       });
 
-      // Chiudi menu cliccando sullo sfondo
       menuOverlay.addEventListener('click', (e) => {
         if (e.target === e.currentTarget) {
           closeMenu();
         }
       });
 
-      // ========== ANIMAZIONI FOOTER ==========
       const socialIcons = document.querySelectorAll('.footer-icons a');
       
       socialIcons.forEach(icon => {
