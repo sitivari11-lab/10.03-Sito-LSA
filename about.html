@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LSA - About us</title>
+  <style>
+    /* RESET & BASE */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      background-color: #e6e4e1;
+      font-family: Arial, sans-serif;
+      color: #222;
+    }
+
+    /* CONTENITORE PRINCIPALE */
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* HEADER FISSO */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 99%;
+      background: #e6e4e1;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      max-width: 90vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      max-height: 65px;
+    }
+
+    .menu-icon {
+      max-height: 18px;
+      cursor: pointer;
+    }
+
+    /* CONTENT WRAPPER */
+    .content-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90vw;
+      max-width: 1200px;
+      display: flex;
+      gap: 60px;
+      align-items: flex-end;
+    }
+
+    /* FOTO QUADRATA */
+    .photo-block {
+      flex-shrink: 0;
+      width: 45%;
+      max-width: 500px;
+    }
+
+    .photo-block img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* TESTO A DESTRA */
+    .text-block {
+      flex: 1;
+      color: #000;
+      padding-bottom: 20px;
+    }
+
+    .text-block h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: normal;
+    }
+
+    .text-block p {
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    /* OVERLAY MENU */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(230, 228, 225, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .overlay.hidden {
+      display: none;
+    }
+
+    .overlay-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .overlay-content a {
+      text-decoration: none;
+      color: #4a5b6b;
+      font-weight: 520;
+    }
+
+    .close-btn {
+      margin-top: 30px;
+      background: none;
+      border: 1px solid #4a5b6b;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .content-wrapper {
+        gap: 40px;
+      }
+
+      .text-block h2 {
+        font-size: 1.8rem;
+      }
+
+      .text-block p {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        top: 55%;
+      }
+
+      .photo-block {
+        width: 70%;
+        max-width: 350px;
+      }
+
+      .text-block {
+        width: 85%;
+        text-align: center;
+        padding-bottom: 0;
+      }
+
+      .text-block h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+
+      .text-block p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .overlay-content {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .photo-block {
+        width: 80%;
+        max-width: 280px;
+      }
+
+      .text-block {
+        width: 90%;
+      }
+
+      .text-block h2 {
+        font-size: 1.4rem;
+      }
+
+      .text-block p {
+        font-size: 0.85rem;
+      }
+
+      .header-inner {
+        padding: 15px 0;
+      }
+
+      .logo {
+        max-height: 55px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HEADER FISSO -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html">
+          <img src="images/logo-lsa-B.png" alt="LSA Logo" class="logo">
+        </a>
+        <img src="images/menu-about.png" alt="Apri menu" class="menu-icon">
+      </div>
+    </header>
+
+    <!-- CONTENUTO CENTRATO -->
+    <div class="content-wrapper">
+      <div class="photo-block">
+        <img src="images/strada.webp" alt="Luca Strada">
+      </div>
+
+      <div class="text-block">
+        <h2>Luca Strada</h2>
+        <p>Nasce a Milano nel 1964; si laurea al Politecnico di Milano in Architettura e Arredamento di Interni con una tesi sperimentale sugli Edifici Intelligenti.</p>
+        <br>
+        <p>Allo studio affianca la pratica professionale in diversi studi storici milanesi e società di ingegneria, acquisendo le capacità progettuali e gestionali necessarie alla libera professione e facendo proprie le peculiarità dell'architettura milanese in tema di materiali, finiture e progetti. In particolare affina la sua capacità di vedere lo spazio a disposizione, anche quando ridotto, ed esaltarne al meglio le sue possibilità espressive.</p>
+	<br>
+	<p>Nel 2000 è socio fondatore dello Studio Risari-Strada, dal 2005 Luca Strada Associati.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERLAY MENU -->
+  <div id="menu-overlay" class="overlay hidden">
+    <div class="overlay-content">
+      <a href="progetti.html">progetti</a>
+      <a href="about.html">about us</a>
+      <a href="contatti.html">contatti</a>
+      <button class="close-btn">chiudi</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuIcon = document.querySelector('.menu-icon');
+      const menuOverlay = document.getElementById('menu-overlay');
+      const closeBtn = document.querySelector('.close-btn');
+
+      menuIcon.addEventListener('click', () => {
+        menuOverlay.classList.remove('hidden');
+      });
+
+      const closeMenu = () => {
+        menuOverlay.classList.add('hidden');
+      };
+
+      closeBtn.addEventListener('click', closeMenu);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !menuOverlay.classList.contains('hidden')) {
+          e.preventDefault();
+          closeMenu();
+        }
+      });
+
+      menuOverlay.addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) {
+          closeMenu();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

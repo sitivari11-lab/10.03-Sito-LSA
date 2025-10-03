@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LSA - Home</title>
+  <style>
+    /* RESET & BASE */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #4a5b6b;
+      font-family: Arial, sans-serif;
+      color: #222;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* CONTENITORE PRINCIPALE */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+      padding: 40px 20px;
+    }
+
+    /* LOGO */
+    .logo {
+      max-width: 350px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 40px;
+    }
+
+    /* LINEE ORIZZONTALI */
+    .linea-superiore,
+    .linea-inferiore {
+      width: 100%;
+      max-width: 400px;
+      border: none;
+      border-top: 1px solid #f4f2e7;
+      margin: 0;
+    }
+
+    .linea-superiore {
+      margin-bottom: 30px;
+      width: 40%;
+    }
+
+    .linea-inferiore {
+      margin-top: 30px;
+      margin-bottom: 40px;
+      width: 50%;
+    }
+
+    /* NAVIGAZIONE */
+    nav {
+      width: 100%;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #f4f2e7;
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: #BA4846;
+    }
+
+    /* ICONE FOOTER */
+    .footer-icons {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer-icons img {
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-icons a:hover img {
+      opacity: 0.6;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+
+      .logo {
+        max-width: 250px;
+        margin-bottom: 30px;
+      }
+
+      .nav-links a {
+        font-size: 1.1rem;
+      }
+
+      .footer-icons {
+        gap: 25px;
+      }
+
+      .footer-icons img {
+        width: 35px;
+        height: 35px;
+      }
+
+      .linea-superiore {
+        margin-bottom: 25px;
+      }
+
+      .linea-inferiore {
+        margin-top: 25px;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        max-width: 200px;
+        margin-bottom: 25px;
+      }
+
+      .nav-links a {
+        font-size: 1rem;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .footer-icons {
+        gap: 20px;
+      }
+
+      .footer-icons img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    /* ANIMAZIONI DI CARICAMENTO */
+    .container {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .nav-links li {
+      animation: slideIn 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .nav-links li:nth-child(1) { animation-delay: 0.2s; }
+    .nav-links li:nth-child(2) { animation-delay: 0.4s; }
+    .nav-links li:nth-child(3) { animation-delay: 0.6s; }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- LOGO -->
+    <img src="images/logo-lsa-W1.png" alt="LSA Logo" class="logo">
+ 
+    <!-- LINEA SUPERIORE -->
+    <hr class="linea-superiore">
+
+    <!-- NAVIGAZIONE -->
+    <nav>
+      <ul class="nav-links">
+        <li><a href="progetti.html">PROGETTI</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="contatti.html">CONTATTI</a></li>
+      </ul>
+    </nav>
+
+    <!-- LINEA INFERIORE -->
+    <hr class="linea-inferiore">
+
+    <!-- ICONE CONTATTI -->
+    <div class="footer-icons">
+      <a href="tel:+390229062116">
+        <img src="images/icon-phone-W1.png" alt="Telefono">
+      </a>
+      <a href="mailto:info@stradassociati.it">
+        <img src="images/icon-email-W1.png" alt="Email">
+      </a>
+      <a href="https://www.instagram.com/stradassociati/" target="_blank">
+        <img src="images/icon-instagram-W1.png" alt="Instagram">
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Aggiungi interattività alle icone social
+    document.addEventListener('DOMContentLoaded', () => {
+      const socialIcons = document.querySelectorAll('.footer-icons a');
+      
+      socialIcons.forEach(icon => {
+        icon.addEventListener('mouseenter', () => {
+          icon.style.transform = 'scale(1.1)';
+        });
+        
+        icon.addEventListener('mouseleave', () => {
+          icon.style.transform = 'scale(1)';
+        });
+      });
+
+      // Preload delle pagine per navigazione più veloce
+      const navLinks = document.querySelectorAll('.nav-links a');
+      navLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+          const href = link.getAttribute('href');
+          if (href && !link.dataset.preloaded) {
+            const linkEl = document.createElement('link');
+            linkEl.rel = 'prefetch';
+            linkEl.href = href;
+            document.head.appendChild(linkEl);
+            link.dataset.preloaded = 'true';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
