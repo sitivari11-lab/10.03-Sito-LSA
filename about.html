@@ -14,18 +14,31 @@
 
     html, body {
       height: 100%;
-      overflow: hidden;
       background-color: #e6e4e1;
       font-family: Arial, sans-serif;
       color: #222;
+    }
+
+    /* Desktop: overflow hidden */
+    @media (min-width: 769px) {
+      html, body {
+        overflow: hidden;
+      }
+    }
+
+    /* Mobile: overflow auto */
+    @media (max-width: 768px) {
+      html, body {
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
     }
 
     /* CONTENITORE PRINCIPALE */
     .container {
       position: relative;
       width: 100vw;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
     }
 
     /* HEADER FISSO */
@@ -33,7 +46,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 99%;
+      width: 100%;
       background: #e6e4e1;
       z-index: 1000;
     }
@@ -137,6 +150,7 @@
     .close-btn {
       margin-top: 30px;
       background: none;
+      color: #4a5b6b;
       border: 1px solid #4a5b6b;
       padding: 8px 16px;
       cursor: pointer;
@@ -158,11 +172,18 @@
     }
 
     @media (max-width: 768px) {
+      .container {
+        min-height: auto;
+        overflow: visible;
+      }
+
       .content-wrapper {
+        position: static;
+        transform: none;
         flex-direction: column;
         gap: 30px;
         align-items: center;
-        top: 55%;
+        padding: 120px 20px 40px;
       }
 
       .photo-block {
@@ -172,7 +193,7 @@
 
       .text-block {
         width: 85%;
-        text-align: center;
+        text-align: left;
         padding-bottom: 0;
       }
 
@@ -234,15 +255,19 @@
     <!-- CONTENUTO CENTRATO -->
     <div class="content-wrapper">
       <div class="photo-block">
-        <img src="images/strada.webp" alt="Luca Strada">
+        <img src="images/studio.webp" alt="Schizzo studio">
       </div>
 
       <div class="text-block">
-        <h2>Luca Strada</h2>
-        <p>Nasce a Milano nel 1964; si laurea al Politecnico di Milano in Architettura e Arredamento di Interni con una tesi sperimentale sugli Edifici Intelligenti.</p>
-        <p>Allo studio affianca la pratica professionale in diversi studi storici milanesi, acquisendo le capacità necessarie alla libera professione e facendo proprie le peculiarità dell'architettura milanese in tema di materiali, finiture e progetti. </p>
+        <h2>Luca Strada Associati</h2>
+        <p>Luca Strada Associati è presente a Milano nel settore dell’architettura dal 1990. La nostra clientela, 	totalmente di carattere privato, trova la possibilità di essere accolta e accompagnata in modo personale e 	riservato lungo tutto il percorso della progettazione, per valorizzare al meglio le proprie proprietà a Milano e 	in Italia. </p>
+
 	<br>
-	<p>Nel 2000 è socio fondatore dello Studio Risari-Strada, dal 2005 Luca Strada Associati.</p>
+
+	<p>Abbiamo offerto i nostri servizi a grandi gruppi assicurativi, gestori di patrimoni
+	immobiliari, enti ecclesiastici, spesso in collaborazione con la Soprintendenza
+	Beni Ambientali e Architettonici e con la Soprintendenza Archeologica per
+	destinazioni commerciali, terziario e residenziale.</p>
       </div>
     </div>
   </div>
@@ -288,7 +313,4 @@
     });
   </script>
 </body>
-
 </html>
-
-
