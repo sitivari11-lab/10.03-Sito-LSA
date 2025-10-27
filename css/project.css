@@ -270,3 +270,14 @@ body {
     gap: 20px;
   }
 }
+
+/* Nascondi immagini placeholder solo su mobile */
+@media (max-width: 768px) {
+  .project-item img.no-lightbox {
+    display: none;
+  }
+  
+  .project-item:has(img.no-lightbox) {
+    display: none;
+  }
+}
