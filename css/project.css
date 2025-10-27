@@ -277,7 +277,8 @@ body {
     display: none;
   }
   
-  .project-item:has(img.no-lightbox) {
+  /* Nascondi anche il contenitore se contiene solo placeholder */
+  .project-item:has(> img.no-lightbox:only-child) {
     display: none;
   }
 }
