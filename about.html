@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LSA - About us</title>
+  <title>LSA - Contatti</title>
   <style>
     /* RESET & BASE */
     * {
@@ -14,6 +14,7 @@
 
     html, body {
       height: 100%;
+      overflow: hidden;
       background-color: #e6e4e1;
       font-family: Arial, sans-serif;
       color: #222;
@@ -38,7 +39,8 @@
     .container {
       position: relative;
       width: 100vw;
-      min-height: 100vh;
+      height: 100vh;
+      overflow: hidden;
     }
 
     /* HEADER FISSO */
@@ -46,7 +48,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 99%;
       background: #e6e4e1;
       z-index: 1000;
     }
@@ -72,47 +74,65 @@
     /* CONTENT WRAPPER */
     .content-wrapper {
       position: absolute;
-      top: 50%;
+      top: 51%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 90vw;
-      max-width: 1200px;
+      max-width: 1400px;
       display: flex;
       gap: 60px;
-      align-items: flex-end;
+      align-items: center;
     }
 
-    /* FOTO QUADRATA */
-    .photo-block {
+    /* MAPPA */
+    .map-block {
       flex-shrink: 0;
-      width: 45%;
-      max-width: 500px;
+      width: 65%;
+      max-width: 550px;
+      height: 550px;
+      overflow: hidden;
     }
 
-    .photo-block img {
+    .map-block img {
       width: 100%;
-      aspect-ratio: 1 / 1;
+      height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    /* TESTO A DESTRA */
+    /* TESTO CONTATTI */
     .text-block {
       flex: 1;
       color: #000;
-      padding-bottom: 20px;
-    }
-
-    .text-block h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      font-weight: normal;
     }
 
     .text-block p {
       font-size: 1rem;
-      line-height: 1.6;
-      text-align: justify;
+      line-height: 1.8;
+      margin-bottom: 0.3rem;
+    }
+
+    .text-block a {
+      color: #000;
+      text-decoration: underline;
+      transition: opacity 0.3s ease;
+    }
+
+    .text-block a:hover {
+      opacity: 0.6;
+    }
+
+    .text-block br {
+      display: block;
+      content: "";
+      margin: 0.8rem 0;
+    }
+
+    .metro-icon {
+      width: 40px;
+      height: 25px;
+      vertical-align: middle;
+      margin-right: 8px;
     }
 
     /* OVERLAY MENU */
@@ -159,56 +179,53 @@
       transition: opacity 0.3s ease;
     }
 
-
     /* RESPONSIVE */
     @media (max-width: 1024px) {
       .content-wrapper {
         gap: 40px;
       }
 
-      .text-block h2 {
-        font-size: 1.8rem;
+      .map-block {
+        height: 400px;
       }
 
       .text-block p {
         font-size: 0.95rem;
       }
+
+      .metro-icon {
+        width: 35px;
+        height: 22px;
+      }
     }
 
     @media (max-width: 768px) {
-      .container {
+     .container {
         min-height: auto;
         overflow: visible;
       }
 
       .content-wrapper {
-        position: static;
-        transform: none;
         flex-direction: column;
         gap: 30px;
-        align-items: center;
-        padding: 120px 20px 40px;
+        top: 65%;
+        width: 85vw;
       }
 
-      .photo-block {
-        width: 70%;
-        max-width: 350px;
+      .map-block {
+        width: 80%;
+        max-width: 300px;
+        height: 300px;
       }
 
       .text-block {
-        width: 85%;
-        text-align: left;
-        padding-bottom: 0;
-      }
-
-      .text-block h2 {
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
+        width: 100%;
+        text-align: center;
       }
 
       .text-block p {
         font-size: 0.9rem;
-        line-height: 1.5;
+        line-height: 1.6;
       }
 
       .overlay-content {
@@ -217,21 +234,22 @@
     }
 
     @media (max-width: 480px) {
-      .photo-block {
-        width: 80%;
-        max-width: 280px;
+      .content-wrapper {
+        width: 90vw;
+        gap: 20px;
       }
 
-      .text-block {
-        width: 90%;
-      }
-
-      .text-block h2 {
-        font-size: 1.4rem;
+      .map-block {
+        height: 250px;
       }
 
       .text-block p {
         font-size: 0.85rem;
+      }
+
+      .metro-icon {
+        width: 30px;
+        height: 20px;
       }
 
       .header-inner {
@@ -252,23 +270,28 @@
         <a href="index.html">
           <img src="images/logo-lsa-B.png" alt="LSA Logo" class="logo">
         </a>
-        <img src="images/menu-about.png" alt="Apri menu" class="menu-icon">
+        <img src="images/menu-contatti.png" alt="Apri menu" class="menu-icon">
       </div>
     </header>
 
     <!-- CONTENUTO CENTRATO -->
     <div class="content-wrapper">
-      <div class="photo-block">
-        <img src="images/studio.webp" alt="Schizzo studio">
+      <div class="map-block">
+        <img src="images/studio.webp" alt="Icona studio">
       </div>
 
       <div class="text-block">
+	<br>
+	<br>
         <h2>Luca Strada Associati</h2>
+	<br>
         <p>Luca Strada Associati è presente a Milano nel settore dell’architettura dal 1990. La nostra clientela,totalmente di carattere privato, trova la possibilità di essere accolta e accompagnata in modo personale e riservato lungo tutto il percorso della progettazione, per valorizzare al meglio le proprie proprietà. </p>
 
 	<br>
 
 	<p>Abbiamo offerto i nostri servizi a grandi gruppi assicurativi, gestori di patrimoni immobiliari, enti ecclesiastici, per destinazioni commerciali, terziario e residenziale, 	spesso in collaborazione con la Soprintendenza Beni Ambientali e Architettonici e con la Soprintendenza Archeologica.</p>
+	<br>
+	<br>
       </div>
     </div>
   </div>
@@ -315,3 +338,4 @@
   </script>
 </body>
 </html>
+
